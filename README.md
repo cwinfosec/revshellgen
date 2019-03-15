@@ -6,3 +6,5 @@ Simple script to generate commands to achieve reverse shells. This is a python p
 python revshellgen.py -i \<ipaddr> -p \<port> -t \<type>
 <br />
 python revshellgen.py --list
+<br />
+python revshellgen.py --all
