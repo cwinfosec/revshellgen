@@ -27,6 +27,24 @@ War<br/>
 Windows Binary<br/>
 Xterm<br/>
 
+**Recommended Setup Steps:**
+
+For ease of use, it's recommended to add revshellgen to your path variable and give it executable permissions. 
+
+```
+chmod +x /dir/to/revshellgen.py
+export PATH=$PATH:/dir/to/revshellgen
+```
+
+Alternatively, you can integrate it with other Kali tools by performing the following:
+
+```
+chmod +x /dir/to/revshellgen.py
+ln -s /dir/to/revshellgen.py /usr/bin/revshellgen
+```
+
+Keep in mind, this isn't ideal for systems with multiple users, and you should use root-privilege symbolic links with discretion. It's imperative that revshellgen.py is restricted from write access by untrusted users with this. 
+
 **Another Example:**
 
 ![Screenshot](https://user-images.githubusercontent.com/45709553/54481815-b5962e00-4807-11e9-84a1-80c7901452c7.PNG)
