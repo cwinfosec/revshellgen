@@ -3,20 +3,9 @@ Simple script to generate commands to achieve reverse shells. This is a python p
 
 ![Screenshot](https://user-images.githubusercontent.com/45709553/54481816-b75ff180-4807-11e9-84db-17aadd39799c.PNG)
 
-**Usage:**
-revshellgen.py [-h] [-i IPADDR] [-p PORT] [-t SHELL_TYPE] [-l] [-a]<br/>
+**Usage:**<br/>
 
-python revshellgen.py -i 127.0.0.1 -p 1234 -t bash<br/>
-
-optional arguments:<br/>
-  -h, --help            show this help message and exit<br/>
-  -i IPADDR, --ipaddr IPADDR<br/>
-                        IP address to connect back to<br/>
-  -p PORT, --port PORT  Port to connect back to<br/>
-  -t SHELL_TYPE, --type SHELL_TYPE<br/>
-                        Type of reverse shell to generate<br/>
-  -l, --list            List available shell types<br/>
-  -a, --all             Generate all the shells!<br/>
+![Screenshot](https://user-images.githubusercontent.com/45709553/54481896-e4f96a80-4808-11e9-8e46-bbdd5e2f5a5a.PNG)
 
 **Shell Types:**<br/>
 ASP<br/>
@@ -37,3 +26,7 @@ Telnet<br/>
 War<br/>
 Windows Binary<br/>
 Xterm<br/>
+
+**Another Example:**
+
+![Screenshot](https://user-images.githubusercontent.com/45709553/54481815-b5962e00-4807-11e9-84a1-80c7901452c7.PNG)
