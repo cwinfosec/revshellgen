@@ -1,5 +1,5 @@
 # revshellgen
-Simple script to generate commands to achieve reverse shells. This is a python port of Shell Lover by DevoOverkill9.
+Simple script to generate commands to achieve reverse shells. Thanks to DevoOverkill9 for the great idea!
 
 ![Screenshot](https://user-images.githubusercontent.com/45709553/54481816-b75ff180-4807-11e9-84db-17aadd39799c.PNG)
 
