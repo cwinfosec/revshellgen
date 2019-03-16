@@ -5,7 +5,21 @@ Simple script to generate commands to achieve reverse shells. Thanks to DevoOver
 
 **Usage:**<br/>
 
-![Screenshot](https://user-images.githubusercontent.com/45709553/54481896-e4f96a80-4808-11e9-8e46-bbdd5e2f5a5a.PNG)
+```
+revshellgen.py [-h] [-i IPADDR] [-p PORT] [-t SHELL_TYPE] [-l] [-a]
+
+python revshellgen.py --help
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i IPADDR, --ipaddr IPADDR
+                        IP address to connect back to
+  -p PORT, --port PORT  Port to connect back to
+  -t SHELL_TYPE, --type SHELL_TYPE
+                        Type of reverse shell to generate
+  -l, --list            List available shell types
+  -a, --all             Generate all the shells!
+```
 
 **Shell Types:**<br/>
 ASP<br/>
