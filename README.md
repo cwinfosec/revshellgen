@@ -3,7 +3,7 @@ Simple script to generate commands to achieve reverse shells. Thanks to DevoOver
 
 ![Screenshot](https://user-images.githubusercontent.com/45709553/54481816-b75ff180-4807-11e9-84db-17aadd39799c.PNG)
 
-**Usage:**<br/>
+##Usage
 
 ```
 revshellgen.py [-h] [-i IPADDR] [-p PORT] [-t SHELL_TYPE] [-l] [-a]
@@ -41,7 +41,7 @@ War<br/>
 Windows Binary<br/>
 Xterm<br/>
 
-**Recommended Setup Steps:**
+##Recommended Setup Steps
 
 For ease of use, it's recommended to add revshellgen to your path variable and give it executable permissions. 
 
