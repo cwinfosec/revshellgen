@@ -12,6 +12,8 @@ def parse_options():
     parser.add_argument("-l", "--list", action="store_true", help="List available shell types", dest='shell_list')
     parser.add_argument("-a", "--all", action="store_true", help="Generate all the shells!", dest='all_shells')
     args = parser.parse_args()
+    if args.all_shells == False and args.ipaddr == None and args.port == None and args.shell_list == False and args.shell_type == None:
+        print(parser.print_help())
     return args
 
 def main(args):
