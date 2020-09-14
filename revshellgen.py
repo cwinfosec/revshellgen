@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+from base64 import b64encode
 
 def parse_options():
 
