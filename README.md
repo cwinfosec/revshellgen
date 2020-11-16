@@ -21,25 +21,30 @@ optional arguments:
   -a, --all             Generate all the shells!
 ```
 
-**Shell Types:**<br/>
-ASP<br/>
-Bash<br/>
-Java Server Page<br/>
-Linux Binary<br/>
-Lua<br/>
-Netcat (regular, mknod, & mkfifo variants)<br/>
-OSX Macho Binary<br/>
-Perl<br/>
-PHP<br/>
-Powershell TCPClient<br/>
-Powershell IEX<br/>
-Python<br/>
-Ruby<br/>
-Socat (preferred for interactive sessions)<br/>
-Telnet<br/>
-War<br/>
-Windows Binary<br/>
-Xterm<br/>
+### Shell Types:
+
+- ASP: `asp`
+- AWK: `awk`
+- Bash: `bash`, `bash-2`, `bash-3`
+- Java: `java`
+- Java Server Page: `jsp`
+- Linux Binary: `lin-bin`
+- Lua: `lua`
+- Netcat (regular, mknod, & mkfifo variants): `nc`, `nc-c`, `nc-mkfifo`, `nc-mknod`, `nc-pipe`, `ncat`
+- Nodejs: `nodejs`
+- OSX Macho Binary: `osx-bin`
+- Perl: `perl`, `perl-2`, `perl-windows`
+- PHP: `php`, `php-2`, `php-3`, `php-4`, `php-5`
+- Powershell TCPClient: `ps-tcp`, 
+- Powershell IEX: `ps-iex`, `ps-b64`
+- Python: `python`, `python-2`
+- Ruby: `ruby`, `ruby-2`, `ruby-windows`
+- Socat (preferred for interactive sessions): `socat`
+- Tclsh: `tclsh`
+- Telnet: `telnet`, `telnet-mkfifo`
+- War: `war`
+- Windows Binary: `win-bin`
+- Xterm: `xterm`
 
 ## Recommended Setup Steps
 
